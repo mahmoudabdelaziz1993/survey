@@ -1,6 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20');
 const keys = require('./keys');
+const controller = require('../controllers/users');
 
 
 //---------------------------------- Google+ --------------------
@@ -10,12 +11,10 @@ passport.use(new GoogleStrategy({
   callbackURL: keys.google.callbackURL
 },
   function (accessToken, refreshToken, profile, cb) {
-    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //   return cb(err, user);
-    // });
+    
     console.log(' success Woo !!');
-    console.log(profile);
-
+    controller.findOrCreate(profile).then((err,user)=>cb(err,user));
+    
 
   }
 ));
