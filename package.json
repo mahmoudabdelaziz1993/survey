@@ -11,7 +11,9 @@
   "author": "MahmoudAbdelaziz",
   "license": "ISC",
   "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.10",
     "passport": "^0.4.0",
