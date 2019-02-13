@@ -20,7 +20,8 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
   clientID: keys.google_clientID,
   clientSecret: keys.google_clientSecret,
-  callbackURL: keys.google_callbackURL
+  callbackURL: keys.google_callbackURL,
+  proxy :true 
 },
   function (accessToken, refreshToken, profile, done) {
     
