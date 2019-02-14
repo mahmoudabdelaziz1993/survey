@@ -4,7 +4,8 @@ import { BrowserRouter, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from './actions';
 import Home from "./components/Home";
-import Landing from './components/Landing'
+import Landing from './components/Landing';
+
 
 class App extends Component {
   componentDidMount(){
@@ -17,6 +18,7 @@ class App extends Component {
           <Nav />
           <Route exact path="/home" component={Home} />
           <Route exact path="/" component={Landing} />
+          
 
         </div>
       </BrowserRouter>

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const authenticated = require('../middleware/authenticated');
+
 
 
 //------------------------------ Google+ --------------------
@@ -12,7 +14,7 @@ function(req, res) {
   res.redirect('/home');
 });
 //-------------------------- logout --------------------
-router.get('/logout', function(req, res) {
+router.get('/logout',authenticated, function(req, res) {
   req.logout();
  res.redirect('/');
 });

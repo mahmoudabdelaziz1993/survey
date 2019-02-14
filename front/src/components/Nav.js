@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
+import Payment from "./Payment"
 
 class Nav extends Component {
     renderContent() {
@@ -9,8 +10,9 @@ class Nav extends Component {
                 return "Loading ....";
             case false:
                 return <li><a href="/auth/google" >Login with google </a ></li>;
-            default :
-                return <li><a href="/auth/logout" >Logout  </a ></li>;
+            default:
+                return <div><li><Payment/></li>
+                    <li><a href="/auth/logout" >Logout  </a ></li></div>;
 
         }
     }
@@ -20,7 +22,7 @@ class Nav extends Component {
             <nav>
                 <div className="nav-wrapper">
                     <div className="container">
-                        <Link to={this.props.auth?'/home':'/'} className="brand-logo"><strong className="black-text">s</strong>urvey</Link>
+                        <Link to={this.props.auth ? '/home' : '/'} className="brand-logo"><strong className="black-text">s</strong>urvey</Link>
                         <ul id='nav-mobile' className="right hide-on-med-and-down">
                             {this.renderContent()}
                         </ul>
