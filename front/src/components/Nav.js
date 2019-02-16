@@ -11,13 +11,15 @@ class Nav extends Component {
             case false:
                 return <li><a href="/auth/google" >Login with google </a ></li>;
             default:
-                return <div><li><Payment/></li>
+                return <div>
+                <li style ={{margin:'0 10px'}}>  Credits : {this.props.auth.credits}  </li>
+                    <li><Payment/></li>
                     <li><a href="/auth/logout" >Logout  </a ></li></div>;
 
         }
     }
     render() {
-        console.log(this.props)
+        
         return (
             <nav>
                 <div className="nav-wrapper">

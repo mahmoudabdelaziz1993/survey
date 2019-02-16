@@ -34,6 +34,15 @@ app.use('/api', apiRouter);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/billing', billingRouter);
+if (process.env.NODE_ENV === "production"){
+    // express will serve production assets
+    app.use(express.static('front/build'));
+    // if it doesn't recognize the route 
+    const path = require('path');
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'front','build','index.html'));
+    });
+}
 
 
 

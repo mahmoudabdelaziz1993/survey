@@ -12,7 +12,8 @@ router.post('/stripe',authenticated,async(req,res)=>{
       });
      // console.log(charge);
      req.user.credits +=5;
-     await req.user.save();
+     const user = await req.user.save();
+     res.send(user);
       
 });
 
