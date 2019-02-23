@@ -8,3 +8,8 @@ export const handlePayment =(token)=>async dispatch =>{
     const res = await axios.post("/billing/stripe",token);
     dispatch({type:FETCH_USER,payload:res.data});
 }
+export const submitSurvey = (values,history)=>async dispatch=>{
+    const res = await axios.post('/api/survey',values);
+    history.push('/home');
+    dispatch({type:FETCH_USER,payload:res.data});
+}

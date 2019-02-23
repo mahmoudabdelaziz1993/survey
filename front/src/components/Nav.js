@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import Payment from "./Payment"
 
@@ -21,10 +21,10 @@ class Nav extends Component {
     render() {
         
         return (
-            <nav>
+            <nav className =" black">
                 <div className="nav-wrapper">
                     <div className="container">
-                        <Link to={this.props.auth ? '/home' : '/'} className="brand-logo"><strong className="black-text">s</strong>urvey</Link>
+                        <Link to={this.props.auth ? '/home' : '/'} className="brand-logo">sur<strong className="blue-text">✓</strong>ey</Link>
                         <ul id='nav-mobile' className="right hide-on-med-and-down">
                             {this.renderContent()}
                         </ul>
