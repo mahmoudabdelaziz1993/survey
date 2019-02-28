@@ -10,7 +10,7 @@ const surveySchema = new Schema({
     no:{type:Number,default:0},
     recipients:[recipientSchema],
     date_sent:Date,
-    last_respond:Date
+    last_respond:{type:Date,default:null}
 });
 const Survey = mongoose.model('surveys',surveySchema);
 module.exports = {Survey};

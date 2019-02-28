@@ -24,8 +24,8 @@ class Nav extends Component {
             <nav className =" black">
                 <div className="nav-wrapper">
                     <div className="container">
-                        <Link to={this.props.auth ? '/home' : '/'} className="brand-logo">sur<strong className="blue-text">✓</strong>ey</Link>
-                        <ul id='nav-mobile' className="right hide-on-med-and-down">
+                        <Link to={this.props.auth ? '/home' : '/'} className="brand-logo left">sur<strong className="blue-text">✓</strong>ey</Link>
+                        <ul id='nav-mobile' className="right ">
                             {this.renderContent()}
                         </ul>
                     </div>

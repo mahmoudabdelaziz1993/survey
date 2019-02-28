@@ -8,8 +8,9 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix front",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front && npm run build --prefix front"
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front && npm run build --prefix front",
+    "webhook": "lt --port 5000 --subdomain xxxphantom"
   },
   "author": "MahmoudAbdelaziz",
   "license": "ISC",
@@ -20,10 +21,13 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "http-proxy-middleware": "^0.19.1",
+    "localtunnel": "^1.9.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.10",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path": "^0.12.7",
+    "path-parser": "^4.2.0",
     "sendgrid": "^5.2.3",
     "stripe": "^6.25.0"
   }
