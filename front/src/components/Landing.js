@@ -2,8 +2,8 @@ import React from 'react'
 const Landing =()=>{
     return (
         <div className="container">
-            <h2 className="center ">Landing</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <h1 className="center blue-text "> sur<strong className="black-text">✓</strong>ey</h1>
+            <p className="center"> Build a Survey Email With Simple Yes Or No Question And get the Resauls   </p>
         </div>
     )
 }

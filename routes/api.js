@@ -39,7 +39,11 @@ Router.post('/survey', authenticated, credits, async (req, res) => {
     }
 
 });
-
+// ----------------- list all survay of a user-------
+Router.get('/survey',authenticated, async (req,res)=>{
+    const survey = await Survey.find({owner:req.user.id}).select({recipients:false});
+    res.send(survey);
+});
 //------------------- voting --------------------
 Router.get('/voting/:surveyID/:choice', (req, res) => {
     res.send(" thanks for voting ");
